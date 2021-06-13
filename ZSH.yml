@@ -1,0 +1,9 @@
+- name: Install latest ZSH
+  hosts: "*"
+  tasks:
+    - name: install ZSH
+      apt:
+        name: zsh
+        state: present
+        update_cache: true
+      become: true
