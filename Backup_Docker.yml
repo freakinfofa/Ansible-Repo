@@ -5,7 +5,7 @@
     - name: Make the volumes backup
       archive:
         path: /var/lib/docker/volumes
-        dest: /var/NFS/Docker_Repo/volumes/Volumes_{{ansible_date_time.date}}.tar.gz
+        dest: /var/NFS/Docker_Repo/volumes/Docker00-Volumes_{{ansible_date_time.date}}.tar.gz
 
   tasks:
     - name: find all files that are older than 15 days
