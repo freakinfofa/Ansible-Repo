@@ -14,7 +14,7 @@
         age: 15d
         recurse: yes
       register: filesOlderThan15
-    - name: remove older than 15 days
+    - name: remove files older than 15 days
       file:
         path: "{{ item.path }}"
         state: absent
