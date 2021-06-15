@@ -1,7 +1,7 @@
 hosts: "*"
   become: yes
 # Backup Volumes from Docker
-tasks:
+  tasks:
     - name: Make the volumes backup
       archive:
         path: /var/lib/docker/volumes
