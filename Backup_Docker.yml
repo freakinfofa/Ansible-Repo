@@ -1,4 +1,4 @@
-hosts: "*"
+- hosts: "*"
   become: yes
 # Backup Volumes from Docker
   tasks:
