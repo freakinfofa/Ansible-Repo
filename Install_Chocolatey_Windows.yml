@@ -1,6 +1,6 @@
 ---
 - name: "Chocolatey"
-  hosts: windows
+  hosts: "*"
   tasks:
     - name: Install chocolatey
       win_chocolatey:
