@@ -8,14 +8,14 @@
         dest: /var/NFS/Docker_Repo/volumes/Volumes_{{ansible_date_time.date}}.tar.gz
 
   tasks:
-    - name: find all files that are older than 10 days
+    - name: find all files that are older than 15 days
       find:
         paths: /var/NFS/Docker_Repo/volumes/
-        age: 7d
+        age: 15d
         recurse: yes
-      register: filesOlderThan7
-    - name: remove older than 7 days
+      register: filesOlderThan15
+    - name: remove older than 15 days
       file:
         path: "{{ item.path }}"
         state: absent
-      with_items: "{{ filesOlderThan7.files }}"
+      with_items: "{{ filesOlderThan15.files }}"
