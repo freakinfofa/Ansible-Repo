@@ -1,0 +1,8 @@
+hosts: "*"
+  become: yes
+# Backup Volumes from Docker
+tasks:
+    - name: Make the volumes backup
+      archive:
+        path: /var/lib/docker/volumes
+        dest: /var/NFS/Docker_Repo/volumes/Volumes_{{ansible_date_time.date}}.tar.gz

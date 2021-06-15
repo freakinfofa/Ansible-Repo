@@ -1,0 +1,8 @@
+hosts: "*"
+  become: yes
+  tasks:
+# Synchronization using rsync protocol (push)
+   - name: Sync /var/lib/docker/volumes to NFS Mounted Share /var/NFS/Docker_Repo
+     ansible.posix.synchronize:
+       src: /var/lib/docker/volumes/
+       dest: rsync://localhost/path/var/NFS/Docker_Repo/volumes/
